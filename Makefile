@@ -1,12 +1,12 @@
 CC = gcc
 CFLAGS = -std=c99 -Wall
-OBJECTS = Assignment1.c
+OBJECTS = Assignment2.c
 
-driver: Assignment1.o
-	$(CC) $(CFLAGS) -o driver Assignment1.o
+driver: Assignment2.o
+	$(CC) $(CFLAGS) -o driver Assignment2.o
 
-Assignment1.o: Assignment1.c
-	$(CC) $(CFLAGS) -c Assignment1.c
+Assignment2.o: Assignment2.c
+	$(CC) $(CFLAGS) -c Assignment2.c
 
 clean:
 	-rm $(OBJECTS) driver
