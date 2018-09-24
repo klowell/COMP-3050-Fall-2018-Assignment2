@@ -1,0 +1,16 @@
+Kristopher Lowell
+kristopher_lowell@student.uml.edu
+COMP - 3050 - 201
+Fall 2018
+9/24/2018
+
+Assignment 2 Write-Up
+
+I think I completed this project completely (100 %).  The program works as expected, 
+or at least with positive numbers (The assignment does entail positive floats ONLY).
+The only problem I think I have with my final product is which steps I've printed.
+I'm guessing that the program prints out too much data.  I did my best to format it
+for it to be readable.  Then, because the assignment instructions says it MUST
+look like the given example but then says to print out the step, I was just unsure
+on the wanted product. It's just never going to look exactly the same because the 
+example doesn't have the steps printed out like you'd expect.

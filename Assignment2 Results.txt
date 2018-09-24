@@ -1,0 +1,307 @@
+Kristopher Lowell
+kristopher_lowell@student.uml.edu
+COMP - 3050 - 201
+Fall 2018
+9/24/2018
+
+Assignment 2 Results:
+
+----------------------------------------------------------------------------
+
+Please enter two positive floating point values each with:
+- no more than 6 significant digits
+- a value between + 10**37 and 10 **-37
+
+Enter Float 1: 34.5
+Enter Float 2: 1.250
+
+Original pattern of Float 1:   0 1000 0100 000 1010 0000 0000 0000 0000
+Original pattern of Float 2:   0 0111 1111 010 0000 0000 0000 0000 0000
+
+COPY MANTISSA AND EXPONENT BITS INTO HELPER INT VARIABLES:
+Float 1:
+Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 0100
+Mantissa Bits: 0000 0000 0000 1010 0000 0000 0000 0000
+Float 2:
+Exponent Bits: 0000 0000 0000 0000 0000 0000 0111 1111
+Mantissa Bits: 0000 0000 0010 0000 0000 0000 0000 0000
+
+SLAM HIDDEN BIT ONTO HELPER INT VARIABLES:
+Float 1 Mantissa Bits: 0000 0000 1000 1010 0000 0000 0000 0000
+Float 2 Mantissa Bits: 0000 0000 1010 0000 0000 0000 0000 0000
+
+CALCULATE HOW MUCH TO SHIFT LOWER VALUES:
+Float 2 must be shifted 5 bits.
+Result adopts Float 1's exponent.
+
+SHIFT MANTISSA BITS OF LOWER VALUE:
+Float 1 Mantissa Bits: 0000 0000 1000 1010 0000 0000 0000 0000
+Float 2 Mantissa Bits: 0000 0000 0000 0101 0000 0000 0000 0000
+
+INTEGER ADD MANTISSA HELPERS:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 0100
+Result Mantissa Bits: 0000 0000 1000 1111 0000 0000 0000 0000
+
+CHECK AND ACCOUNT FOR OVERFLOW IN MANTISSA BITS:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 0100
+Result Mantissa Bits: 0000 0000 1000 1111 0000 0000 0000 0000
+
+REMOVE HIDDEN BIT:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 0100
+Result Mantissa Bits: 0000 0000 0000 1111 0000 0000 0000 0000
+
+Bit pattern of result:   0 1000 0100 000 1111 0000 0000 0000 0000
+
+EMULATED FLOATING RESULT FROM PRINTF ==>>> 35.75
+HARDWARE FLOATING RESULT FROM PRINTF ==>>> 35.75
+Press any key to continue . . .
+
+----------------------------------------------------------------------------
+
+Please enter two positive floating point values each with:
+- no more than 6 significant digits
+- a value between + 10**37 and 10 **-37
+
+Enter Float 1: 2.75e3
+Enter Float 2: 256
+
+Original pattern of Float 1:   0 1000 1010 010 1011 1110 0000 0000 0000
+Original pattern of Float 2:   0 1000 0111 000 0000 0000 0000 0000 0000
+
+COPY MANTISSA AND EXPONENT BITS INTO HELPER INT VARIABLES:
+Float 1:
+Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 1010
+Mantissa Bits: 0000 0000 0010 1011 1110 0000 0000 0000
+Float 2:
+Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 0111
+Mantissa Bits: 0000 0000 0000 0000 0000 0000 0000 0000
+
+SLAM HIDDEN BIT ONTO HELPER INT VARIABLES:
+Float 1 Mantissa Bits: 0000 0000 1010 1011 1110 0000 0000 0000
+Float 2 Mantissa Bits: 0000 0000 1000 0000 0000 0000 0000 0000
+
+CALCULATE HOW MUCH TO SHIFT LOWER VALUES:
+Float 2 must be shifted 3 bits.
+Result adopts Float 1's exponent.
+
+SHIFT MANTISSA BITS OF LOWER VALUE:
+Float 1 Mantissa Bits: 0000 0000 1010 1011 1110 0000 0000 0000
+Float 2 Mantissa Bits: 0000 0000 0001 0000 0000 0000 0000 0000
+
+INTEGER ADD MANTISSA HELPERS:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 1010
+Result Mantissa Bits: 0000 0000 1011 1011 1110 0000 0000 0000
+
+CHECK AND ACCOUNT FOR OVERFLOW IN MANTISSA BITS:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 1010
+Result Mantissa Bits: 0000 0000 1011 1011 1110 0000 0000 0000
+
+REMOVE HIDDEN BIT:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 1010
+Result Mantissa Bits: 0000 0000 0011 1011 1110 0000 0000 0000
+
+Bit pattern of result:   0 1000 1010 011 1011 1110 0000 0000 0000
+
+EMULATED FLOATING RESULT FROM PRINTF ==>>> 3006
+HARDWARE FLOATING RESULT FROM PRINTF ==>>> 3006
+Press any key to continue . . .
+
+----------------------------------------------------------------------------
+
+Please enter two positive floating point values each with:
+- no more than 6 significant digits
+- a value between + 10**37 and 10 **-37
+
+Enter Float 1: 1.4e-3
+Enter Float 2: 13.0
+
+Original pattern of Float 1:   0 0111 0101 011 0111 1000 0000 0011 0100
+Original pattern of Float 2:   0 1000 0010 101 0000 0000 0000 0000 0000
+
+COPY MANTISSA AND EXPONENT BITS INTO HELPER INT VARIABLES:
+Float 1:
+Exponent Bits: 0000 0000 0000 0000 0000 0000 0111 0101
+Mantissa Bits: 0000 0000 0011 0111 1000 0000 0011 0100
+Float 2:
+Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 0010
+Mantissa Bits: 0000 0000 0101 0000 0000 0000 0000 0000
+
+SLAM HIDDEN BIT ONTO HELPER INT VARIABLES:
+Float 1 Mantissa Bits: 0000 0000 1011 0111 1000 0000 0011 0100
+Float 2 Mantissa Bits: 0000 0000 1101 0000 0000 0000 0000 0000
+
+CALCULATE HOW MUCH TO SHIFT LOWER VALUES:
+Float 1 must be shifted 13 bits.
+Result adopts Float 2's exponent.
+
+SHIFT MANTISSA BITS OF LOWER VALUE:
+Float 1 Mantissa Bits: 0000 0000 0000 0000 0000 0101 1011 1100
+Float 2 Mantissa Bits: 0000 0000 1101 0000 0000 0000 0000 0000
+
+INTEGER ADD MANTISSA HELPERS:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 0010
+Result Mantissa Bits: 0000 0000 1101 0000 0000 0101 1011 1100
+
+CHECK AND ACCOUNT FOR OVERFLOW IN MANTISSA BITS:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 0010
+Result Mantissa Bits: 0000 0000 1101 0000 0000 0101 1011 1100
+
+REMOVE HIDDEN BIT:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 0010
+Result Mantissa Bits: 0000 0000 0101 0000 0000 0101 1011 1100
+
+Bit pattern of result:   0 1000 0010 101 0000 0000 0101 1011 1100
+
+EMULATED FLOATING RESULT FROM PRINTF ==>>> 13.0014
+HARDWARE FLOATING RESULT FROM PRINTF ==>>> 13.0014
+Press any key to continue . . .
+
+----------------------------------------------------------------------------
+
+Please enter two positive floating point values each with:
+- no more than 6 significant digits
+- a value between + 10**37 and 10 **-37
+
+Enter Float 1: 7.491
+Enter Float 2: 4.617e20
+
+Original pattern of Float 1:   0 1000 0001 110 1111 1011 0110 0100 0110
+Original pattern of Float 2:   0 1100 0011 100 1000 0011 1010 1111 1111
+
+COPY MANTISSA AND EXPONENT BITS INTO HELPER INT VARIABLES:
+Float 1:
+Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 0001
+Mantissa Bits: 0000 0000 0110 1111 1011 0110 0100 0110
+Float 2:
+Exponent Bits: 0000 0000 0000 0000 0000 0000 1100 0011
+Mantissa Bits: 0000 0000 0100 1000 0011 1010 1111 1111
+
+SLAM HIDDEN BIT ONTO HELPER INT VARIABLES:
+Float 1 Mantissa Bits: 0000 0000 1110 1111 1011 0110 0100 0110
+Float 2 Mantissa Bits: 0000 0000 1100 1000 0011 1010 1111 1111
+
+CALCULATE HOW MUCH TO SHIFT LOWER VALUES:
+Float 1 must be shifted 66 bits.
+Result adopts Float 2's exponent.
+
+SHIFT MANTISSA BITS OF LOWER VALUE:
+Float 1 Mantissa Bits: 0000 0000 0000 0000 0000 0000 0000 0000
+Float 2 Mantissa Bits: 0000 0000 1100 1000 0011 1010 1111 1111
+
+INTEGER ADD MANTISSA HELPERS:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1100 0011
+Result Mantissa Bits: 0000 0000 1100 1000 0011 1010 1111 1111
+
+CHECK AND ACCOUNT FOR OVERFLOW IN MANTISSA BITS:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1100 0011
+Result Mantissa Bits: 0000 0000 1100 1000 0011 1010 1111 1111
+
+REMOVE HIDDEN BIT:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1100 0011
+Result Mantissa Bits: 0000 0000 0100 1000 0011 1010 1111 1111
+
+Bit pattern of result:   0 1100 0011 100 1000 0011 1010 1111 1111
+
+EMULATED FLOATING RESULT FROM PRINTF ==>>> 4.617e+20
+HARDWARE FLOATING RESULT FROM PRINTF ==>>> 4.617e+20
+Press any key to continue . . .
+
+----------------------------------------------------------------------------
+
+Please enter two positive floating point values each with:
+- no more than 6 significant digits
+- a value between + 10**37 and 10 **-37
+
+Enter Float 1: 9643.0
+Enter Float 2: 1.237e-2
+
+Original pattern of Float 1:   0 1000 1100 001 0110 1010 1100 0000 0000
+Original pattern of Float 2:   0 0111 1000 100 1010 1010 1011 1000 1010
+
+COPY MANTISSA AND EXPONENT BITS INTO HELPER INT VARIABLES:
+Float 1:
+Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 1100
+Mantissa Bits: 0000 0000 0001 0110 1010 1100 0000 0000
+Float 2:
+Exponent Bits: 0000 0000 0000 0000 0000 0000 0111 1000
+Mantissa Bits: 0000 0000 0100 1010 1010 1011 1000 1010
+
+SLAM HIDDEN BIT ONTO HELPER INT VARIABLES:
+Float 1 Mantissa Bits: 0000 0000 1001 0110 1010 1100 0000 0000
+Float 2 Mantissa Bits: 0000 0000 1100 1010 1010 1011 1000 1010
+
+CALCULATE HOW MUCH TO SHIFT LOWER VALUES:
+Float 2 must be shifted 20 bits.
+Result adopts Float 1's exponent.
+
+SHIFT MANTISSA BITS OF LOWER VALUE:
+Float 1 Mantissa Bits: 0000 0000 1001 0110 1010 1100 0000 0000
+Float 2 Mantissa Bits: 0000 0000 0000 0000 0000 0000 0000 1100
+
+INTEGER ADD MANTISSA HELPERS:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 1100
+Result Mantissa Bits: 0000 0000 1001 0110 1010 1100 0000 1100
+
+CHECK AND ACCOUNT FOR OVERFLOW IN MANTISSA BITS:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 1100
+Result Mantissa Bits: 0000 0000 1001 0110 1010 1100 0000 1100
+
+REMOVE HIDDEN BIT:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1000 1100
+Result Mantissa Bits: 0000 0000 0001 0110 1010 1100 0000 1100
+
+Bit pattern of result:   0 1000 1100 001 0110 1010 1100 0000 1100
+
+EMULATED FLOATING RESULT FROM PRINTF ==>>> 9643.01
+HARDWARE FLOATING RESULT FROM PRINTF ==>>> 9643.01
+Press any key to continue . . .
+
+----------------------------------------------------------------------------
+
+Please enter two positive floating point values each with:
+- no more than 6 significant digits
+- a value between + 10**37 and 10 **-37
+
+Enter Float 1: 25e37
+Enter Float 2: 15e37
+
+Original pattern of Float 1:   0 1111 1110 011 1100 0001 0100 0100 0000
+Original pattern of Float 2:   0 1111 1101 110 0001 1011 0001 1110 0110
+
+COPY MANTISSA AND EXPONENT BITS INTO HELPER INT VARIABLES:
+Float 1:
+Exponent Bits: 0000 0000 0000 0000 0000 0000 1111 1110
+Mantissa Bits: 0000 0000 0011 1100 0001 0100 0100 0000
+Float 2:
+Exponent Bits: 0000 0000 0000 0000 0000 0000 1111 1101
+Mantissa Bits: 0000 0000 0110 0001 1011 0001 1110 0110
+
+SLAM HIDDEN BIT ONTO HELPER INT VARIABLES:
+Float 1 Mantissa Bits: 0000 0000 1011 1100 0001 0100 0100 0000
+Float 2 Mantissa Bits: 0000 0000 1110 0001 1011 0001 1110 0110
+
+CALCULATE HOW MUCH TO SHIFT LOWER VALUES:
+Float 2 must be shifted 1 bits.
+Result adopts Float 1's exponent.
+
+SHIFT MANTISSA BITS OF LOWER VALUE:
+Float 1 Mantissa Bits: 0000 0000 1011 1100 0001 0100 0100 0000
+Float 2 Mantissa Bits: 0000 0000 0111 0000 1101 1000 1111 0011
+
+INTEGER ADD MANTISSA HELPERS:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1111 1110
+Result Mantissa Bits: 0000 0001 0010 1100 1110 1101 0011 0011
+
+CHECK AND ACCOUNT FOR OVERFLOW IN MANTISSA BITS:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1111 1111
+Result Mantissa Bits: 0000 0000 0000 0000 0000 0000 0000 0000
+
+REMOVE HIDDEN BIT:
+Result Exponent Bits: 0000 0000 0000 0000 0000 0000 1111 1111
+Result Mantissa Bits: 0000 0000 0000 0000 0000 0000 0000 0000
+
+Bit pattern of result:   0 1111 1111 000 0000 0000 0000 0000 0000
+
+EMULATED FLOATING RESULT FROM PRINTF ==>>> inf
+HARDWARE FLOATING RESULT FROM PRINTF ==>>> inf
+Press any key to continue . . .
